@@ -1,6 +1,6 @@
 const quotes = [
   "How your life feels is more important than how it looks",
-  "Life if tough but so are you!",
+  "Life is tough but so are you!",
   "Goals not written down are just wishes",
   "Quotes don't work unless you DO",
   "Ask  yourself if what you are doing 'today' is getting you closer to where you want to be 'tomorrow'",
