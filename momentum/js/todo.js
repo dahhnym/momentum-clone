@@ -69,16 +69,24 @@ function handleToDoSubmit(event){
   saveToDos();
 }
 toDoForm.addEventListener("submit",handleToDoSubmit);
+<<<<<<< HEAD
 /*
 function sayHello(item){
   console.log("this is the turn of", item);
 }
 */
+=======
+>>>>>>> f48e8757aa7b65fe8139b80fccc6f40ef6f2af5c
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 if(savedToDos !== null){
   const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
+<<<<<<< HEAD
 
 }
+=======
+}
+
+>>>>>>> f48e8757aa7b65fe8139b80fccc6f40ef6f2af5c
