@@ -11,7 +11,7 @@ const quotes = [
   "Don't stop when you're tired. Stop when you're DONE"  
 ];
 
-const quote = document.querySelector("#quote span");
+const quote = document.querySelector("#quote");
 const todaysQuote= quotes[Math.floor(Math.random() * quotes.length)];
 
 quote.innerText = todaysQuote;

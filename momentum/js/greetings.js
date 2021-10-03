@@ -4,6 +4,7 @@
 
 //혹은
 const loginForm = document.querySelector('#login-form');
+const toDo_Form = document.querySelector('#todo-form');
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector('#greeting');
 
@@ -21,10 +22,20 @@ function onLoginSubmit(event){
   const username = loginInput.value;
   localStorage.setItem(USERNAME_KEY,username);
   paintGreetings(username);
+  toDo_Form.classList.remove(HIDDEN_CLASSNAME);
 }
 
 function paintGreetings(username){
-  greeting.innerText = `Hello ${username}!`;
+  const hours = new Date().getHours();
+  let greetings;
+  if(hours >= 4 && hours <= 11){
+    greetings = "Good morning";
+  } else if(hours >= 12 && hours < 17){
+    greetings = "Good afternoon";
+  } else {
+    greetings = "Good evening";
+  }
+  greeting.innerText = `${greetings}, ${username}!`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
@@ -34,8 +45,11 @@ if(savedUsername === null){
   // show the form
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener('submit', onLoginSubmit);
+  toDo_Form.classList.add(HIDDEN_CLASSNAME);
 } else {
- // show the greetings
- paintGreetings(savedUsername)
+  // show the greetings
+  paintGreetings(savedUsername)
+  toDo_Form.classList.remove(HIDDEN_CLASSNAME);
 } 
+
 
